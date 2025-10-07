@@ -52,7 +52,7 @@ Dynamics of changes in the number of orders by calendar week and order status.
 
 ##  Этапы выполнения ДЗ
 
-1. 
+1. Что сделано с данными
 - Добавила строку в файл source_orders.csv
 (В Hub для заказов появится новая запись с этим новым ключом
 В Link/спутниках — обновятся связи/атрибуты по новому ключу
