@@ -871,3 +871,1989 @@ See https://docs.getdbt.com/docs/package-management#section-specifying-package-v
 [0m10:27:13.179541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '0bfc09f9-0627-4c8c-80b6-31c9a65221cb', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e9b00113fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e9b00115850>]}
 [0m10:27:13.181005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e9b029a1970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e9b0082cf10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e9b001bf250>]}
 [0m10:27:13.182583 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-10-07 10:37:00.685338 | 1299a50e-9576-45c8-ba88-4fd760e2760a ==============================
+[0m10:37:00.685338 [info ] [MainThread]: Running with dbt=1.4.0
+[0m10:37:00.691113 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/workspace', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'show': False, 'which': 'seed', 'rpc_method': 'seed', 'indirect_selection': 'eager'}
+[0m10:37:00.692501 [debug] [MainThread]: Tracking: tracking
+[0m10:37:00.720892 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162c270ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162c270df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162c270910>]}
+[0m10:37:00.830903 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 3 files changed.
+[0m10:37:00.831601 [debug] [MainThread]: Partial parsing: updated file: jaffle_shop_dbtvault://models/order_dynamics.sql
+[0m10:37:00.831984 [debug] [MainThread]: Partial parsing: updated file: jaffle_shop_dbtvault://seeds/source_orders.csv
+[0m10:37:00.832284 [debug] [MainThread]: Partial parsing: updated file: jaffle_shop_dbtvault://models/customer_order_rank.sql
+[0m10:37:00.850544 [debug] [MainThread]: 1699: static parser successfully parsed order_dynamics.sql
+[0m10:37:00.864397 [debug] [MainThread]: 1699: static parser successfully parsed customer_order_rank.sql
+[0m10:37:00.889670 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 5 unused configuration paths:
+- models.jaffle_shop_dbtvault.raw_vault.links
+- models.jaffle_shop_dbtvault.raw_vault
+- models.jaffle_shop_dbtvault.stage
+- models.jaffle_shop_dbtvault.raw_vault.hubs
+- models.jaffle_shop_dbtvault.raw_vault.sats
+[0m10:37:00.896066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1299a50e-9576-45c8-ba88-4fd760e2760a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162c1b20d0>]}
+[0m10:37:00.910640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1299a50e-9576-45c8-ba88-4fd760e2760a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162bf655b0>]}
+[0m10:37:00.911131 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 658 macros, 0 operations, 2 seed files, 7 sources, 0 exposures, 0 metrics
+[0m10:37:00.911552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1299a50e-9576-45c8-ba88-4fd760e2760a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162bf65640>]}
+[0m10:37:00.913404 [info ] [MainThread]: 
+[0m10:37:00.915994 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:37:00.917593 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m10:37:00.931033 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m10:37:00.931597 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:37:00.932102 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:37:00.945690 [debug] [ThreadPool]: SQL status: SELECT 5 in 0 seconds
+[0m10:37:00.948196 [debug] [ThreadPool]: On list_postgres: Close
+[0m10:37:00.953390 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_dbt'
+[0m10:37:00.961456 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:37:00.961768 [debug] [ThreadPool]: On list_postgres_dbt: BEGIN
+[0m10:37:00.962017 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:37:00.967380 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m10:37:00.967691 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:37:00.967926 [debug] [ThreadPool]: On list_postgres_dbt: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres_dbt"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt'
+  
+[0m10:37:00.970180 [debug] [ThreadPool]: SQL status: SELECT 2 in 0 seconds
+[0m10:37:00.971451 [debug] [ThreadPool]: On list_postgres_dbt: ROLLBACK
+[0m10:37:00.971820 [debug] [ThreadPool]: On list_postgres_dbt: Close
+[0m10:37:00.978516 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:00.978892 [debug] [MainThread]: On master: BEGIN
+[0m10:37:00.979212 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:37:00.987044 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:37:00.987502 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:00.987855 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:37:00.995386 [debug] [MainThread]: SQL status: SELECT 0 in 0 seconds
+[0m10:37:00.997689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1299a50e-9576-45c8-ba88-4fd760e2760a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162c279370>]}
+[0m10:37:00.998323 [debug] [MainThread]: On master: ROLLBACK
+[0m10:37:00.998898 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:00.999319 [debug] [MainThread]: On master: BEGIN
+[0m10:37:01.000334 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:37:01.000768 [debug] [MainThread]: On master: COMMIT
+[0m10:37:01.001195 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:01.001596 [debug] [MainThread]: On master: COMMIT
+[0m10:37:01.002075 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:37:01.002498 [debug] [MainThread]: On master: Close
+[0m10:37:01.003483 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:37:01.004074 [info ] [MainThread]: 
+[0m10:37:01.008721 [debug] [Thread-1  ]: Began running node seed.jaffle_shop_dbtvault.source_customers
+[0m10:37:01.009250 [info ] [Thread-1  ]: 1 of 2 START seed file dbt.source_customers .................................... [RUN]
+[0m10:37:01.009977 [debug] [Thread-1  ]: Acquiring new postgres connection 'seed.jaffle_shop_dbtvault.source_customers'
+[0m10:37:01.010262 [debug] [Thread-1  ]: Began compiling node seed.jaffle_shop_dbtvault.source_customers
+[0m10:37:01.010779 [debug] [Thread-1  ]: Timing info for seed.jaffle_shop_dbtvault.source_customers (compile): 2025-10-07 10:37:01.010678 => 2025-10-07 10:37:01.010685
+[0m10:37:01.011166 [debug] [Thread-1  ]: Began executing node seed.jaffle_shop_dbtvault.source_customers
+[0m10:37:01.048585 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_customers"
+[0m10:37:01.048920 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: BEGIN
+[0m10:37:01.049166 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:37:01.055083 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:37:01.055406 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_customers"
+[0m10:37:01.055641 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "seed.jaffle_shop_dbtvault.source_customers"} */
+truncate table "postgres"."dbt"."source_customers"
+[0m10:37:01.056922 [debug] [Thread-1  ]: SQL status: TRUNCATE TABLE in 0 seconds
+[0m10:37:01.223092 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_customers"
+[0m10:37:01.223482 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: 
+          insert into "postgres"."dbt"."source_customers" ("id", "first_name", "last_name", "email") values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(...
+[0m10:37:01.225155 [debug] [Thread-1  ]: SQL status: INSERT 0 103 in 0 seconds
+[0m10:37:01.235382 [debug] [Thread-1  ]: Writing runtime SQL for node "seed.jaffle_shop_dbtvault.source_customers"
+[0m10:37:01.252558 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: COMMIT
+[0m10:37:01.253045 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_customers"
+[0m10:37:01.253456 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: COMMIT
+[0m10:37:01.255428 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:37:01.256137 [debug] [Thread-1  ]: Timing info for seed.jaffle_shop_dbtvault.source_customers (execute): 2025-10-07 10:37:01.011560 => 2025-10-07 10:37:01.256078
+[0m10:37:01.256393 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: Close
+[0m10:37:01.257244 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1299a50e-9576-45c8-ba88-4fd760e2760a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162bac67f0>]}
+[0m10:37:01.257785 [info ] [Thread-1  ]: 1 of 2 OK loaded seed file dbt.source_customers ................................ [[32mINSERT 103[0m in 0.25s]
+[0m10:37:01.259770 [debug] [Thread-1  ]: Finished running node seed.jaffle_shop_dbtvault.source_customers
+[0m10:37:01.260222 [debug] [Thread-1  ]: Began running node seed.jaffle_shop_dbtvault.source_orders
+[0m10:37:01.260733 [info ] [Thread-1  ]: 2 of 2 START seed file dbt.source_orders ....................................... [RUN]
+[0m10:37:01.261382 [debug] [Thread-1  ]: Acquiring new postgres connection 'seed.jaffle_shop_dbtvault.source_orders'
+[0m10:37:01.261659 [debug] [Thread-1  ]: Began compiling node seed.jaffle_shop_dbtvault.source_orders
+[0m10:37:01.261885 [debug] [Thread-1  ]: Timing info for seed.jaffle_shop_dbtvault.source_orders (compile): 2025-10-07 10:37:01.261823 => 2025-10-07 10:37:01.261827
+[0m10:37:01.262110 [debug] [Thread-1  ]: Began executing node seed.jaffle_shop_dbtvault.source_orders
+[0m10:37:01.274307 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_orders"
+[0m10:37:01.274599 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: BEGIN
+[0m10:37:01.274826 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:37:01.280292 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:37:01.280576 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_orders"
+[0m10:37:01.280782 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "seed.jaffle_shop_dbtvault.source_orders"} */
+truncate table "postgres"."dbt"."source_orders"
+[0m10:37:01.282005 [debug] [Thread-1  ]: SQL status: TRUNCATE TABLE in 0 seconds
+[0m10:37:01.387724 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_orders"
+[0m10:37:01.388130 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: 
+          insert into "postgres"."dbt"."source_orders" ("id", "user_id", "order_date", "status") values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%...
+[0m10:37:01.389753 [debug] [Thread-1  ]: SQL status: INSERT 0 101 in 0 seconds
+[0m10:37:01.390540 [debug] [Thread-1  ]: Writing runtime SQL for node "seed.jaffle_shop_dbtvault.source_orders"
+[0m10:37:01.392578 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: COMMIT
+[0m10:37:01.392816 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_orders"
+[0m10:37:01.393018 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: COMMIT
+[0m10:37:01.394582 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:37:01.395237 [debug] [Thread-1  ]: Timing info for seed.jaffle_shop_dbtvault.source_orders (execute): 2025-10-07 10:37:01.262257 => 2025-10-07 10:37:01.395181
+[0m10:37:01.395494 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: Close
+[0m10:37:01.396322 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1299a50e-9576-45c8-ba88-4fd760e2760a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162bac6460>]}
+[0m10:37:01.396868 [info ] [Thread-1  ]: 2 of 2 OK loaded seed file dbt.source_orders ................................... [[32mINSERT 101[0m in 0.14s]
+[0m10:37:01.397373 [debug] [Thread-1  ]: Finished running node seed.jaffle_shop_dbtvault.source_orders
+[0m10:37:01.399010 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:37:01.399305 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:01.399566 [debug] [MainThread]: On master: BEGIN
+[0m10:37:01.399785 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:37:01.405515 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:37:01.405914 [debug] [MainThread]: On master: COMMIT
+[0m10:37:01.406258 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:01.406615 [debug] [MainThread]: On master: COMMIT
+[0m10:37:01.407070 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:37:01.407442 [debug] [MainThread]: On master: Close
+[0m10:37:01.409478 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:37:01.409761 [debug] [MainThread]: Connection 'seed.jaffle_shop_dbtvault.source_orders' was properly closed.
+[0m10:37:01.410083 [info ] [MainThread]: 
+[0m10:37:01.410539 [info ] [MainThread]: Finished running 2 seeds in 0 hours 0 minutes and 0.50 seconds (0.50s).
+[0m10:37:01.411013 [debug] [MainThread]: Command end result
+[0m10:37:01.424746 [info ] [MainThread]: 
+[0m10:37:01.425290 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:37:01.425673 [info ] [MainThread]: 
+[0m10:37:01.425995 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m10:37:01.426438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162c279160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162dab9be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b162bf653a0>]}
+[0m10:37:01.426748 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-10-07 10:37:10.263628 | 353707e2-4695-46ec-a3da-1ea59a20fa8a ==============================
+[0m10:37:10.263628 [info ] [MainThread]: Running with dbt=1.4.0
+[0m10:37:10.266506 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/workspace', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m10:37:10.266877 [debug] [MainThread]: Tracking: tracking
+[0m10:37:10.274700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddbe09af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddbe09640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddbe09670>]}
+[0m10:37:10.365806 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:37:10.366204 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:37:10.367055 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 5 unused configuration paths:
+- models.jaffle_shop_dbtvault.raw_vault.sats
+- models.jaffle_shop_dbtvault.raw_vault
+- models.jaffle_shop_dbtvault.stage
+- models.jaffle_shop_dbtvault.raw_vault.hubs
+- models.jaffle_shop_dbtvault.raw_vault.links
+[0m10:37:10.374214 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '353707e2-4695-46ec-a3da-1ea59a20fa8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddbd750d0>]}
+[0m10:37:10.387951 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '353707e2-4695-46ec-a3da-1ea59a20fa8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddbbb71c0>]}
+[0m10:37:10.388442 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 658 macros, 0 operations, 2 seed files, 7 sources, 0 exposures, 0 metrics
+[0m10:37:10.388781 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '353707e2-4695-46ec-a3da-1ea59a20fa8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddbbb71f0>]}
+[0m10:37:10.390275 [info ] [MainThread]: 
+[0m10:37:10.391955 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:37:10.393131 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m10:37:10.413106 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m10:37:10.413756 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:37:10.414317 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:37:10.421247 [debug] [ThreadPool]: SQL status: SELECT 5 in 0 seconds
+[0m10:37:10.422710 [debug] [ThreadPool]: On list_postgres: Close
+[0m10:37:10.424879 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_dbt'
+[0m10:37:10.431705 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:37:10.432020 [debug] [ThreadPool]: On list_postgres_dbt: BEGIN
+[0m10:37:10.432251 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:37:10.439262 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m10:37:10.439670 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:37:10.439983 [debug] [ThreadPool]: On list_postgres_dbt: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres_dbt"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt'
+  
+[0m10:37:10.443675 [debug] [ThreadPool]: SQL status: SELECT 2 in 0 seconds
+[0m10:37:10.445075 [debug] [ThreadPool]: On list_postgres_dbt: ROLLBACK
+[0m10:37:10.445528 [debug] [ThreadPool]: On list_postgres_dbt: Close
+[0m10:37:10.454252 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:10.454720 [debug] [MainThread]: On master: BEGIN
+[0m10:37:10.455066 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:37:10.461565 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:37:10.461960 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:10.462220 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:37:10.465327 [debug] [MainThread]: SQL status: SELECT 0 in 0 seconds
+[0m10:37:10.466538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '353707e2-4695-46ec-a3da-1ea59a20fa8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddbe0d250>]}
+[0m10:37:10.466968 [debug] [MainThread]: On master: ROLLBACK
+[0m10:37:10.467387 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:10.467711 [debug] [MainThread]: On master: BEGIN
+[0m10:37:10.468308 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:37:10.468689 [debug] [MainThread]: On master: COMMIT
+[0m10:37:10.469019 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:10.469330 [debug] [MainThread]: On master: COMMIT
+[0m10:37:10.469861 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:37:10.470268 [debug] [MainThread]: On master: Close
+[0m10:37:10.471447 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:37:10.471892 [info ] [MainThread]: 
+[0m10:37:10.476632 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:37:10.477251 [info ] [Thread-1  ]: 1 of 2 START sql view model dbt.customer_order_rank ............................ [RUN]
+[0m10:37:10.478156 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.customer_order_rank'
+[0m10:37:10.478469 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:37:10.483493 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:37:10.483988 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (compile): 2025-10-07 10:37:10.478661 => 2025-10-07 10:37:10.483891
+[0m10:37:10.484289 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:37:10.532207 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:37:10.532888 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:37:10.533183 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: BEGIN
+[0m10:37:10.533445 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:37:10.538935 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:37:10.539237 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:37:10.539487 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+
+  create view "postgres"."dbt"."customer_order_rank__dbt_tmp" as (
+    WITH completed_orders AS (
+  SELECT
+    id,
+    COUNT(DISTINCT order_id) AS completed_count
+  FROM "postgres"."dbt"."source_customers"
+  WHERE first_name = 'Scott'
+  GROUP BY id
+)
+SELECT id, completed_count
+FROM completed_orders
+ORDER BY completed_count DESC
+  );
+[0m10:37:10.540169 [debug] [Thread-1  ]: Postgres adapter: Postgres error: column "order_id" does not exist
+LINE 7:     COUNT(DISTINCT order_id) AS completed_count
+                           ^
+
+[0m10:37:10.540443 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: ROLLBACK
+[0m10:37:10.540911 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (execute): 2025-10-07 10:37:10.485615 => 2025-10-07 10:37:10.540835
+[0m10:37:10.541182 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: Close
+[0m10:37:10.543742 [debug] [Thread-1  ]: Database Error in model customer_order_rank (models/customer_order_rank.sql)
+  column "order_id" does not exist
+  LINE 7:     COUNT(DISTINCT order_id) AS completed_count
+                             ^
+  compiled Code at target/run/jaffle_shop_dbtvault/models/customer_order_rank.sql
+[0m10:37:10.544406 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '353707e2-4695-46ec-a3da-1ea59a20fa8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddbbe94f0>]}
+[0m10:37:10.545082 [error] [Thread-1  ]: 1 of 2 ERROR creating sql view model dbt.customer_order_rank ................... [[31mERROR[0m in 0.07s]
+[0m10:37:10.547862 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:37:10.548276 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:37:10.548840 [info ] [Thread-1  ]: 2 of 2 START sql view model dbt.order_dynamics ................................. [RUN]
+[0m10:37:10.549744 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.order_dynamics'
+[0m10:37:10.550028 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:37:10.555638 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:37:10.556301 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (compile): 2025-10-07 10:37:10.550278 => 2025-10-07 10:37:10.556184
+[0m10:37:10.556667 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:37:10.561330 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:37:10.561818 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:37:10.562042 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: BEGIN
+[0m10:37:10.562250 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:37:10.567819 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:37:10.568179 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:37:10.568421 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+
+  create view "postgres"."dbt"."order_dynamics__dbt_tmp" as (
+    WITH orders_weekly AS (
+  SELECT
+    DATE_TRUNC('week', order_date) AS calendar_week,
+    COUNT(DISTINCT user_id) AS orders_count
+  FROM "postgres"."dbt"."source_orders"
+  GROUP BY calendar_week
+)
+SELECT * FROM orders_weekly
+ORDER BY calendar_week
+  );
+[0m10:37:10.571381 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m10:37:10.580030 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:37:10.580364 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+alter table "postgres"."dbt"."order_dynamics__dbt_tmp" rename to "order_dynamics"
+[0m10:37:10.581047 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:37:10.600130 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:37:10.600534 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:37:10.600771 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:37:10.608682 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:37:10.616334 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:37:10.616793 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+drop view if exists "postgres"."dbt"."order_dynamics__dbt_backup" cascade
+[0m10:37:10.619685 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m10:37:10.621095 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (execute): 2025-10-07 10:37:10.556838 => 2025-10-07 10:37:10.621037
+[0m10:37:10.621374 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: Close
+[0m10:37:10.622240 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '353707e2-4695-46ec-a3da-1ea59a20fa8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddba337c0>]}
+[0m10:37:10.622890 [info ] [Thread-1  ]: 2 of 2 OK created sql view model dbt.order_dynamics ............................ [[32mCREATE VIEW[0m in 0.07s]
+[0m10:37:10.623405 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:37:10.624893 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:37:10.625243 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:10.625534 [debug] [MainThread]: On master: BEGIN
+[0m10:37:10.625766 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:37:10.631563 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:37:10.632032 [debug] [MainThread]: On master: COMMIT
+[0m10:37:10.632464 [debug] [MainThread]: Using postgres connection "master"
+[0m10:37:10.632860 [debug] [MainThread]: On master: COMMIT
+[0m10:37:10.633343 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:37:10.633779 [debug] [MainThread]: On master: Close
+[0m10:37:10.634939 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:37:10.635243 [debug] [MainThread]: Connection 'model.jaffle_shop_dbtvault.order_dynamics' was properly closed.
+[0m10:37:10.635613 [info ] [MainThread]: 
+[0m10:37:10.636207 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.24 seconds (0.24s).
+[0m10:37:10.636926 [debug] [MainThread]: Command end result
+[0m10:37:10.651868 [info ] [MainThread]: 
+[0m10:37:10.652423 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m10:37:10.652779 [info ] [MainThread]: 
+[0m10:37:10.653115 [error] [MainThread]: [33mDatabase Error in model customer_order_rank (models/customer_order_rank.sql)[0m
+[0m10:37:10.653439 [error] [MainThread]:   column "order_id" does not exist
+[0m10:37:10.653732 [error] [MainThread]:   LINE 7:     COUNT(DISTINCT order_id) AS completed_count
+[0m10:37:10.654010 [error] [MainThread]:                              ^
+[0m10:37:10.654287 [error] [MainThread]:   compiled Code at target/run/jaffle_shop_dbtvault/models/customer_order_rank.sql
+[0m10:37:10.654607 [info ] [MainThread]: 
+[0m10:37:10.654910 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=0 TOTAL=2
+[0m10:37:10.655326 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddba37070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddbd750d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5ddbd15130>]}
+[0m10:37:10.655667 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-10-07 10:41:54.363275 | 255d6e1e-091b-45a4-8f43-c1acd486c679 ==============================
+[0m10:41:54.363275 [info ] [MainThread]: Running with dbt=1.4.0
+[0m10:41:54.365931 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/workspace', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m10:41:54.366309 [debug] [MainThread]: Tracking: tracking
+[0m10:41:54.370865 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202fabe7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202fabe6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202fabe700>]}
+[0m10:41:54.460744 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m10:41:54.461329 [debug] [MainThread]: Partial parsing: updated file: jaffle_shop_dbtvault://models/customer_order_rank.sql
+[0m10:41:54.476844 [debug] [MainThread]: 1699: static parser successfully parsed customer_order_rank.sql
+[0m10:41:54.498901 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 5 unused configuration paths:
+- models.jaffle_shop_dbtvault.raw_vault.sats
+- models.jaffle_shop_dbtvault.stage
+- models.jaffle_shop_dbtvault.raw_vault
+- models.jaffle_shop_dbtvault.raw_vault.hubs
+- models.jaffle_shop_dbtvault.raw_vault.links
+[0m10:41:54.504802 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '255d6e1e-091b-45a4-8f43-c1acd486c679', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202f9f30d0>]}
+[0m10:41:54.519642 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '255d6e1e-091b-45a4-8f43-c1acd486c679', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202fabbc10>]}
+[0m10:41:54.520146 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 658 macros, 0 operations, 2 seed files, 7 sources, 0 exposures, 0 metrics
+[0m10:41:54.520583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '255d6e1e-091b-45a4-8f43-c1acd486c679', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202f7b2400>]}
+[0m10:41:54.522043 [info ] [MainThread]: 
+[0m10:41:54.523747 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:41:54.524900 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m10:41:54.537898 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m10:41:54.538421 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:41:54.538829 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:41:54.547431 [debug] [ThreadPool]: SQL status: SELECT 5 in 0 seconds
+[0m10:41:54.549856 [debug] [ThreadPool]: On list_postgres: Close
+[0m10:41:54.556961 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_dbt'
+[0m10:41:54.567246 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:41:54.567801 [debug] [ThreadPool]: On list_postgres_dbt: BEGIN
+[0m10:41:54.568232 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:41:54.577975 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m10:41:54.578659 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:41:54.579115 [debug] [ThreadPool]: On list_postgres_dbt: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres_dbt"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt'
+  
+[0m10:41:54.582708 [debug] [ThreadPool]: SQL status: SELECT 3 in 0 seconds
+[0m10:41:54.584940 [debug] [ThreadPool]: On list_postgres_dbt: ROLLBACK
+[0m10:41:54.585643 [debug] [ThreadPool]: On list_postgres_dbt: Close
+[0m10:41:54.601493 [debug] [MainThread]: Using postgres connection "master"
+[0m10:41:54.601907 [debug] [MainThread]: On master: BEGIN
+[0m10:41:54.602188 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:41:54.608082 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:41:54.608442 [debug] [MainThread]: Using postgres connection "master"
+[0m10:41:54.608697 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:41:54.614017 [debug] [MainThread]: SQL status: SELECT 1 in 0 seconds
+[0m10:41:54.616128 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '255d6e1e-091b-45a4-8f43-c1acd486c679', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202fabe7f0>]}
+[0m10:41:54.616739 [debug] [MainThread]: On master: ROLLBACK
+[0m10:41:54.617270 [debug] [MainThread]: Using postgres connection "master"
+[0m10:41:54.617659 [debug] [MainThread]: On master: BEGIN
+[0m10:41:54.618190 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:41:54.618554 [debug] [MainThread]: On master: COMMIT
+[0m10:41:54.618864 [debug] [MainThread]: Using postgres connection "master"
+[0m10:41:54.619200 [debug] [MainThread]: On master: COMMIT
+[0m10:41:54.619611 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:41:54.619964 [debug] [MainThread]: On master: Close
+[0m10:41:54.624300 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:41:54.624794 [info ] [MainThread]: 
+[0m10:41:54.629870 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:41:54.630467 [info ] [Thread-1  ]: 1 of 2 START sql view model dbt.customer_order_rank ............................ [RUN]
+[0m10:41:54.631448 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.customer_order_rank'
+[0m10:41:54.631855 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:41:54.637723 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:41:54.638315 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (compile): 2025-10-07 10:41:54.632137 => 2025-10-07 10:41:54.638214
+[0m10:41:54.638738 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:41:54.686162 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:41:54.687039 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:41:54.687462 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: BEGIN
+[0m10:41:54.687790 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:41:54.694397 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:41:54.694760 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:41:54.694997 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+
+  create view "postgres"."dbt"."customer_order_rank__dbt_tmp" as (
+    WITH completed_orders AS (
+  SELECT
+    user_id,
+    COUNT(DISTINCT id) AS completed_count
+  FROM "postgres"."dbt"."source_orders"
+  WHERE status = 'completed'
+  GROUP BY id
+)
+SELECT user_id, completed_count
+FROM completed_orders
+ORDER BY completed_count DESC
+  );
+[0m10:41:54.696141 [debug] [Thread-1  ]: Postgres adapter: Postgres error: column "source_orders.user_id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 6:     user_id,
+            ^
+
+[0m10:41:54.696454 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: ROLLBACK
+[0m10:41:54.696929 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (execute): 2025-10-07 10:41:54.638993 => 2025-10-07 10:41:54.696851
+[0m10:41:54.697171 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: Close
+[0m10:41:54.699572 [debug] [Thread-1  ]: Database Error in model customer_order_rank (models/customer_order_rank.sql)
+  column "source_orders.user_id" must appear in the GROUP BY clause or be used in an aggregate function
+  LINE 6:     user_id,
+              ^
+  compiled Code at target/run/jaffle_shop_dbtvault/models/customer_order_rank.sql
+[0m10:41:54.700146 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '255d6e1e-091b-45a4-8f43-c1acd486c679', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202f995d90>]}
+[0m10:41:54.700698 [error] [Thread-1  ]: 1 of 2 ERROR creating sql view model dbt.customer_order_rank ................... [[31mERROR[0m in 0.07s]
+[0m10:41:54.702266 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:41:54.702696 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:41:54.703186 [info ] [Thread-1  ]: 2 of 2 START sql view model dbt.order_dynamics ................................. [RUN]
+[0m10:41:54.703903 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.order_dynamics'
+[0m10:41:54.704169 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:41:54.708213 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:41:54.709079 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (compile): 2025-10-07 10:41:54.704331 => 2025-10-07 10:41:54.708980
+[0m10:41:54.709667 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:41:54.719051 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:41:54.719725 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:41:54.720039 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: BEGIN
+[0m10:41:54.720265 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:41:54.725822 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:41:54.726153 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:41:54.726401 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+
+  create view "postgres"."dbt"."order_dynamics__dbt_tmp" as (
+    WITH orders_weekly AS (
+  SELECT
+    DATE_TRUNC('week', order_date) AS calendar_week,
+    COUNT(DISTINCT user_id) AS orders_count
+  FROM "postgres"."dbt"."source_orders"
+  GROUP BY calendar_week
+)
+SELECT * FROM orders_weekly
+ORDER BY calendar_week
+  );
+[0m10:41:54.728174 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m10:41:54.734866 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:41:54.735161 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+alter table "postgres"."dbt"."order_dynamics" rename to "order_dynamics__dbt_backup"
+[0m10:41:54.735741 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:41:54.738824 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:41:54.739048 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+alter table "postgres"."dbt"."order_dynamics__dbt_tmp" rename to "order_dynamics"
+[0m10:41:54.739582 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:41:54.758902 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:41:54.759274 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:41:54.759528 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:41:54.762092 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:41:54.767919 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:41:54.768225 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+drop view if exists "postgres"."dbt"."order_dynamics__dbt_backup" cascade
+[0m10:41:54.777475 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m10:41:54.779041 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (execute): 2025-10-07 10:41:54.710007 => 2025-10-07 10:41:54.778979
+[0m10:41:54.779370 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: Close
+[0m10:41:54.780318 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '255d6e1e-091b-45a4-8f43-c1acd486c679', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202f9ffcd0>]}
+[0m10:41:54.780973 [info ] [Thread-1  ]: 2 of 2 OK created sql view model dbt.order_dynamics ............................ [[32mCREATE VIEW[0m in 0.08s]
+[0m10:41:54.781764 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:41:54.783132 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:41:54.783438 [debug] [MainThread]: Using postgres connection "master"
+[0m10:41:54.783674 [debug] [MainThread]: On master: BEGIN
+[0m10:41:54.783891 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:41:54.790549 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:41:54.791065 [debug] [MainThread]: On master: COMMIT
+[0m10:41:54.791458 [debug] [MainThread]: Using postgres connection "master"
+[0m10:41:54.791826 [debug] [MainThread]: On master: COMMIT
+[0m10:41:54.792290 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:41:54.792673 [debug] [MainThread]: On master: Close
+[0m10:41:54.793556 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:41:54.793884 [debug] [MainThread]: Connection 'model.jaffle_shop_dbtvault.order_dynamics' was properly closed.
+[0m10:41:54.794245 [info ] [MainThread]: 
+[0m10:41:54.796777 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.27 seconds (0.27s).
+[0m10:41:54.797339 [debug] [MainThread]: Command end result
+[0m10:41:54.810582 [info ] [MainThread]: 
+[0m10:41:54.811105 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m10:41:54.811481 [info ] [MainThread]: 
+[0m10:41:54.811814 [error] [MainThread]: [33mDatabase Error in model customer_order_rank (models/customer_order_rank.sql)[0m
+[0m10:41:54.812131 [error] [MainThread]:   column "source_orders.user_id" must appear in the GROUP BY clause or be used in an aggregate function
+[0m10:41:54.812441 [error] [MainThread]:   LINE 6:     user_id,
+[0m10:41:54.812717 [error] [MainThread]:               ^
+[0m10:41:54.812985 [error] [MainThread]:   compiled Code at target/run/jaffle_shop_dbtvault/models/customer_order_rank.sql
+[0m10:41:54.813272 [info ] [MainThread]: 
+[0m10:41:54.813597 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=0 TOTAL=2
+[0m10:41:54.813985 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202fabb610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202fabe7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70202f9a2b80>]}
+[0m10:41:54.814281 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-10-07 10:43:18.904789 | cda75e3e-9448-4c2e-ada0-0ab57c5334ed ==============================
+[0m10:43:18.904789 [info ] [MainThread]: Running with dbt=1.4.0
+[0m10:43:18.907948 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/workspace', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m10:43:18.908651 [debug] [MainThread]: Tracking: tracking
+[0m10:43:18.916262 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287b2ecca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287b2ecdf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287b2ec910>]}
+[0m10:43:19.002548 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m10:43:19.003207 [debug] [MainThread]: Partial parsing: updated file: jaffle_shop_dbtvault://models/order_dynamics.sql
+[0m10:43:19.018622 [debug] [MainThread]: 1699: static parser successfully parsed order_dynamics.sql
+[0m10:43:19.053495 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 5 unused configuration paths:
+- models.jaffle_shop_dbtvault.raw_vault
+- models.jaffle_shop_dbtvault.raw_vault.hubs
+- models.jaffle_shop_dbtvault.raw_vault.sats
+- models.jaffle_shop_dbtvault.stage
+- models.jaffle_shop_dbtvault.raw_vault.links
+[0m10:43:19.064047 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cda75e3e-9448-4c2e-ada0-0ab57c5334ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287b2230d0>]}
+[0m10:43:19.083616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cda75e3e-9448-4c2e-ada0-0ab57c5334ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287af96b80>]}
+[0m10:43:19.084321 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 658 macros, 0 operations, 2 seed files, 7 sources, 0 exposures, 0 metrics
+[0m10:43:19.084858 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cda75e3e-9448-4c2e-ada0-0ab57c5334ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287cb24c10>]}
+[0m10:43:19.086708 [info ] [MainThread]: 
+[0m10:43:19.088428 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:43:19.089693 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m10:43:19.101927 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m10:43:19.102315 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:43:19.102637 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:43:19.110798 [debug] [ThreadPool]: SQL status: SELECT 5 in 0 seconds
+[0m10:43:19.112339 [debug] [ThreadPool]: On list_postgres: Close
+[0m10:43:19.114619 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_dbt'
+[0m10:43:19.121651 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:43:19.122035 [debug] [ThreadPool]: On list_postgres_dbt: BEGIN
+[0m10:43:19.122324 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:43:19.128084 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m10:43:19.128463 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:43:19.128733 [debug] [ThreadPool]: On list_postgres_dbt: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres_dbt"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt'
+  
+[0m10:43:19.131183 [debug] [ThreadPool]: SQL status: SELECT 3 in 0 seconds
+[0m10:43:19.132568 [debug] [ThreadPool]: On list_postgres_dbt: ROLLBACK
+[0m10:43:19.132968 [debug] [ThreadPool]: On list_postgres_dbt: Close
+[0m10:43:19.142732 [debug] [MainThread]: Using postgres connection "master"
+[0m10:43:19.143310 [debug] [MainThread]: On master: BEGIN
+[0m10:43:19.143744 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:43:19.150103 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:43:19.150506 [debug] [MainThread]: Using postgres connection "master"
+[0m10:43:19.150745 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:43:19.154324 [debug] [MainThread]: SQL status: SELECT 1 in 0 seconds
+[0m10:43:19.155741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cda75e3e-9448-4c2e-ada0-0ab57c5334ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287cade1c0>]}
+[0m10:43:19.156150 [debug] [MainThread]: On master: ROLLBACK
+[0m10:43:19.156899 [debug] [MainThread]: Using postgres connection "master"
+[0m10:43:19.157333 [debug] [MainThread]: On master: BEGIN
+[0m10:43:19.158137 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:43:19.158685 [debug] [MainThread]: On master: COMMIT
+[0m10:43:19.159094 [debug] [MainThread]: Using postgres connection "master"
+[0m10:43:19.159539 [debug] [MainThread]: On master: COMMIT
+[0m10:43:19.160058 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:43:19.160491 [debug] [MainThread]: On master: Close
+[0m10:43:19.161519 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:43:19.164758 [info ] [MainThread]: 
+[0m10:43:19.170174 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:43:19.172210 [info ] [Thread-1  ]: 1 of 2 START sql view model dbt.customer_order_rank ............................ [RUN]
+[0m10:43:19.173023 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.customer_order_rank'
+[0m10:43:19.173303 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:43:19.176956 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:43:19.177527 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (compile): 2025-10-07 10:43:19.173794 => 2025-10-07 10:43:19.177434
+[0m10:43:19.177852 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:43:19.214371 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:43:19.215084 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:43:19.215370 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: BEGIN
+[0m10:43:19.215602 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:43:19.221510 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:43:19.221866 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:43:19.222062 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+
+  create view "postgres"."dbt"."customer_order_rank__dbt_tmp" as (
+    WITH completed_orders AS (
+  SELECT
+    user_id,
+    COUNT(DISTINCT id) AS completed_count
+  FROM "postgres"."dbt"."source_orders"
+  WHERE status = 'completed'
+  GROUP BY id
+)
+SELECT user_id, completed_count
+FROM completed_orders
+ORDER BY completed_count DESC
+  );
+[0m10:43:19.223098 [debug] [Thread-1  ]: Postgres adapter: Postgres error: column "source_orders.user_id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 6:     user_id,
+            ^
+
+[0m10:43:19.223393 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: ROLLBACK
+[0m10:43:19.223862 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (execute): 2025-10-07 10:43:19.178057 => 2025-10-07 10:43:19.223787
+[0m10:43:19.224132 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: Close
+[0m10:43:19.226668 [debug] [Thread-1  ]: Database Error in model customer_order_rank (models/customer_order_rank.sql)
+  column "source_orders.user_id" must appear in the GROUP BY clause or be used in an aggregate function
+  LINE 6:     user_id,
+              ^
+  compiled Code at target/run/jaffle_shop_dbtvault/models/customer_order_rank.sql
+[0m10:43:19.227253 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cda75e3e-9448-4c2e-ada0-0ab57c5334ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287b1c3d90>]}
+[0m10:43:19.227790 [error] [Thread-1  ]: 1 of 2 ERROR creating sql view model dbt.customer_order_rank ................... [[31mERROR[0m in 0.05s]
+[0m10:43:19.229305 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:43:19.229709 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:43:19.230217 [info ] [Thread-1  ]: 2 of 2 START sql view model dbt.order_dynamics ................................. [RUN]
+[0m10:43:19.231103 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.order_dynamics'
+[0m10:43:19.231501 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:43:19.236963 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:43:19.237851 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (compile): 2025-10-07 10:43:19.231775 => 2025-10-07 10:43:19.237742
+[0m10:43:19.238368 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:43:19.245278 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:43:19.245938 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:43:19.246209 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: BEGIN
+[0m10:43:19.246460 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:43:19.252720 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:43:19.253188 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:43:19.253505 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+
+  create view "postgres"."dbt"."order_dynamics__dbt_tmp" as (
+    WITH orders_weekly AS (
+  SELECT
+    DATE_TRUNC('week', order_date) AS calendar_week,
+    COUNT(DISTINCT id) AS orders_count
+  FROM "postgres"."dbt"."source_orders"
+  GROUP BY calendar_week
+)
+SELECT * FROM orders_weekly
+ORDER BY calendar_week
+  );
+[0m10:43:19.255913 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m10:43:19.263647 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:43:19.264046 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+alter table "postgres"."dbt"."order_dynamics" rename to "order_dynamics__dbt_backup"
+[0m10:43:19.264781 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:43:19.267992 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:43:19.268383 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+alter table "postgres"."dbt"."order_dynamics__dbt_tmp" rename to "order_dynamics"
+[0m10:43:19.269025 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:43:19.290408 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:43:19.290783 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:43:19.291037 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:43:19.305214 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:43:19.312411 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:43:19.312815 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+drop view if exists "postgres"."dbt"."order_dynamics__dbt_backup" cascade
+[0m10:43:19.314422 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m10:43:19.315756 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (execute): 2025-10-07 10:43:19.238701 => 2025-10-07 10:43:19.315698
+[0m10:43:19.316034 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: Close
+[0m10:43:19.316963 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cda75e3e-9448-4c2e-ada0-0ab57c5334ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287b22ecd0>]}
+[0m10:43:19.317618 [info ] [Thread-1  ]: 2 of 2 OK created sql view model dbt.order_dynamics ............................ [[32mCREATE VIEW[0m in 0.09s]
+[0m10:43:19.318096 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:43:19.321774 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:43:19.322103 [debug] [MainThread]: Using postgres connection "master"
+[0m10:43:19.322421 [debug] [MainThread]: On master: BEGIN
+[0m10:43:19.322655 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:43:19.331798 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:43:19.332337 [debug] [MainThread]: On master: COMMIT
+[0m10:43:19.332720 [debug] [MainThread]: Using postgres connection "master"
+[0m10:43:19.333057 [debug] [MainThread]: On master: COMMIT
+[0m10:43:19.333862 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:43:19.334290 [debug] [MainThread]: On master: Close
+[0m10:43:19.336295 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:43:19.338462 [debug] [MainThread]: Connection 'model.jaffle_shop_dbtvault.order_dynamics' was properly closed.
+[0m10:43:19.339511 [info ] [MainThread]: 
+[0m10:43:19.339982 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.25 seconds (0.25s).
+[0m10:43:19.340781 [debug] [MainThread]: Command end result
+[0m10:43:19.359583 [info ] [MainThread]: 
+[0m10:43:19.360199 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m10:43:19.360666 [info ] [MainThread]: 
+[0m10:43:19.361117 [error] [MainThread]: [33mDatabase Error in model customer_order_rank (models/customer_order_rank.sql)[0m
+[0m10:43:19.361565 [error] [MainThread]:   column "source_orders.user_id" must appear in the GROUP BY clause or be used in an aggregate function
+[0m10:43:19.361961 [error] [MainThread]:   LINE 6:     user_id,
+[0m10:43:19.362385 [error] [MainThread]:               ^
+[0m10:43:19.362796 [error] [MainThread]:   compiled Code at target/run/jaffle_shop_dbtvault/models/customer_order_rank.sql
+[0m10:43:19.363198 [info ] [MainThread]: 
+[0m10:43:19.363728 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=0 TOTAL=2
+[0m10:43:19.365652 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287cb24c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287b1d5f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72287b1d56d0>]}
+[0m10:43:19.367186 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-10-07 10:45:55.553378 | 56956df2-316a-47a3-9504-daf200db78aa ==============================
+[0m10:45:55.553378 [info ] [MainThread]: Running with dbt=1.4.0
+[0m10:45:55.556069 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/workspace', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m10:45:55.556453 [debug] [MainThread]: Tracking: tracking
+[0m10:45:55.563163 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3dbb48b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3dbb4dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3dbb4700>]}
+[0m10:45:55.654142 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m10:45:55.654761 [debug] [MainThread]: Partial parsing: updated file: jaffle_shop_dbtvault://models/customer_order_rank.sql
+[0m10:45:55.674395 [debug] [MainThread]: 1699: static parser successfully parsed customer_order_rank.sql
+[0m10:45:55.706760 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 5 unused configuration paths:
+- models.jaffle_shop_dbtvault.raw_vault
+- models.jaffle_shop_dbtvault.raw_vault.hubs
+- models.jaffle_shop_dbtvault.stage
+- models.jaffle_shop_dbtvault.raw_vault.links
+- models.jaffle_shop_dbtvault.raw_vault.sats
+[0m10:45:55.726102 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '56956df2-316a-47a3-9504-daf200db78aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3dae80d0>]}
+[0m10:45:55.752649 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '56956df2-316a-47a3-9504-daf200db78aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3d85db50>]}
+[0m10:45:55.753343 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 658 macros, 0 operations, 2 seed files, 7 sources, 0 exposures, 0 metrics
+[0m10:45:55.754092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '56956df2-316a-47a3-9504-daf200db78aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3f3ecbe0>]}
+[0m10:45:55.756291 [info ] [MainThread]: 
+[0m10:45:55.758847 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:45:55.760810 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m10:45:55.777595 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m10:45:55.777970 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:45:55.778244 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:45:55.786191 [debug] [ThreadPool]: SQL status: SELECT 5 in 0 seconds
+[0m10:45:55.788867 [debug] [ThreadPool]: On list_postgres: Close
+[0m10:45:55.792598 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_dbt'
+[0m10:45:55.801672 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:45:55.802057 [debug] [ThreadPool]: On list_postgres_dbt: BEGIN
+[0m10:45:55.802321 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:45:55.808882 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m10:45:55.809395 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:45:55.809745 [debug] [ThreadPool]: On list_postgres_dbt: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres_dbt"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt'
+  
+[0m10:45:55.813588 [debug] [ThreadPool]: SQL status: SELECT 3 in 0 seconds
+[0m10:45:55.816518 [debug] [ThreadPool]: On list_postgres_dbt: ROLLBACK
+[0m10:45:55.817576 [debug] [ThreadPool]: On list_postgres_dbt: Close
+[0m10:45:55.826459 [debug] [MainThread]: Using postgres connection "master"
+[0m10:45:55.826827 [debug] [MainThread]: On master: BEGIN
+[0m10:45:55.827085 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:45:55.833474 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:45:55.833847 [debug] [MainThread]: Using postgres connection "master"
+[0m10:45:55.834115 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:45:55.837540 [debug] [MainThread]: SQL status: SELECT 1 in 0 seconds
+[0m10:45:55.838897 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '56956df2-316a-47a3-9504-daf200db78aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3dbb8250>]}
+[0m10:45:55.839302 [debug] [MainThread]: On master: ROLLBACK
+[0m10:45:55.839798 [debug] [MainThread]: Using postgres connection "master"
+[0m10:45:55.840152 [debug] [MainThread]: On master: BEGIN
+[0m10:45:55.840804 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:45:55.841169 [debug] [MainThread]: On master: COMMIT
+[0m10:45:55.841549 [debug] [MainThread]: Using postgres connection "master"
+[0m10:45:55.841863 [debug] [MainThread]: On master: COMMIT
+[0m10:45:55.842226 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:45:55.842488 [debug] [MainThread]: On master: Close
+[0m10:45:55.843249 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:45:55.843821 [info ] [MainThread]: 
+[0m10:45:55.849476 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:45:55.850131 [info ] [Thread-1  ]: 1 of 2 START sql view model dbt.customer_order_rank ............................ [RUN]
+[0m10:45:55.850954 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.customer_order_rank'
+[0m10:45:55.851274 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:45:55.855214 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:45:55.855758 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (compile): 2025-10-07 10:45:55.851698 => 2025-10-07 10:45:55.855649
+[0m10:45:55.856137 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:45:55.894146 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:45:55.894738 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:45:55.894981 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: BEGIN
+[0m10:45:55.895197 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:45:55.901336 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:45:55.901637 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:45:55.901855 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+
+  create view "postgres"."dbt"."customer_order_rank__dbt_tmp" as (
+    WITH completed_orders AS (
+  SELECT
+    user_id,
+    COUNT(DISTINCT id) AS completed_count
+  FROM "postgres"."dbt"."source_orders"
+  WHERE status = 'completed'
+  GROUP BY user_id
+)
+SELECT user_id, completed_count
+FROM completed_orders
+ORDER BY completed_count DESC
+
+
+-- SELECT
+--   user_id,
+--   COUNT(DISTINCT order_id) AS completed_count
+-- FROM "postgres"."dbt"."source_orders"
+-- WHERE order_status = 'completed'
+-- GROUP BY user_id
+-- ORDER BY completed_count DESC
+  );
+[0m10:45:55.903645 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m10:45:55.910108 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:45:55.910347 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+alter table "postgres"."dbt"."customer_order_rank__dbt_tmp" rename to "customer_order_rank"
+[0m10:45:55.910919 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:45:55.927377 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: COMMIT
+[0m10:45:55.927709 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:45:55.927936 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: COMMIT
+[0m10:45:55.944258 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:45:55.950779 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:45:55.951093 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+drop view if exists "postgres"."dbt"."customer_order_rank__dbt_backup" cascade
+[0m10:45:55.951649 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m10:45:55.952912 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (execute): 2025-10-07 10:45:55.856316 => 2025-10-07 10:45:55.952857
+[0m10:45:55.953162 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: Close
+[0m10:45:55.953987 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '56956df2-316a-47a3-9504-daf200db78aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3dae5700>]}
+[0m10:45:55.954618 [info ] [Thread-1  ]: 1 of 2 OK created sql view model dbt.customer_order_rank ....................... [[32mCREATE VIEW[0m in 0.10s]
+[0m10:45:55.956544 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:45:55.957008 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:45:55.957483 [info ] [Thread-1  ]: 2 of 2 START sql view model dbt.order_dynamics ................................. [RUN]
+[0m10:45:55.958427 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.order_dynamics'
+[0m10:45:55.958715 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:45:55.961771 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:45:55.962208 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (compile): 2025-10-07 10:45:55.958878 => 2025-10-07 10:45:55.962134
+[0m10:45:55.962571 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:45:55.969671 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:45:55.970177 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:45:55.970407 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: BEGIN
+[0m10:45:55.970623 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:45:55.975938 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:45:55.976200 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:45:55.976447 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+
+  create view "postgres"."dbt"."order_dynamics__dbt_tmp" as (
+    WITH orders_weekly AS (
+  SELECT
+    DATE_TRUNC('week', order_date) AS calendar_week,
+    COUNT(DISTINCT id) AS orders_count
+  FROM "postgres"."dbt"."source_orders"
+  GROUP BY calendar_week
+)
+SELECT * FROM orders_weekly
+ORDER BY calendar_week
+  );
+[0m10:45:55.978141 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m10:45:55.982144 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:45:55.982489 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+alter table "postgres"."dbt"."order_dynamics" rename to "order_dynamics__dbt_backup"
+[0m10:45:55.983269 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:45:55.986564 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:45:55.986778 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+alter table "postgres"."dbt"."order_dynamics__dbt_tmp" rename to "order_dynamics"
+[0m10:45:55.987279 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:45:55.991172 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:45:55.991409 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:45:55.991609 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:45:55.992831 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:45:55.996174 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:45:55.996401 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+drop view if exists "postgres"."dbt"."order_dynamics__dbt_backup" cascade
+[0m10:45:55.997765 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m10:45:55.998987 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (execute): 2025-10-07 10:45:55.962764 => 2025-10-07 10:45:55.998932
+[0m10:45:55.999229 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: Close
+[0m10:45:56.000045 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '56956df2-316a-47a3-9504-daf200db78aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3dae5f40>]}
+[0m10:45:56.000649 [info ] [Thread-1  ]: 2 of 2 OK created sql view model dbt.order_dynamics ............................ [[32mCREATE VIEW[0m in 0.04s]
+[0m10:45:56.001124 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:45:56.003071 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:45:56.003346 [debug] [MainThread]: Using postgres connection "master"
+[0m10:45:56.003593 [debug] [MainThread]: On master: BEGIN
+[0m10:45:56.003809 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:45:56.009807 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:45:56.010242 [debug] [MainThread]: On master: COMMIT
+[0m10:45:56.010623 [debug] [MainThread]: Using postgres connection "master"
+[0m10:45:56.010929 [debug] [MainThread]: On master: COMMIT
+[0m10:45:56.011435 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:45:56.011742 [debug] [MainThread]: On master: Close
+[0m10:45:56.012481 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:45:56.012766 [debug] [MainThread]: Connection 'model.jaffle_shop_dbtvault.order_dynamics' was properly closed.
+[0m10:45:56.013076 [info ] [MainThread]: 
+[0m10:45:56.013678 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.26 seconds (0.26s).
+[0m10:45:56.014225 [debug] [MainThread]: Command end result
+[0m10:45:56.026376 [info ] [MainThread]: 
+[0m10:45:56.026877 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:45:56.027225 [info ] [MainThread]: 
+[0m10:45:56.027562 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m10:45:56.028020 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3d413310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3d413370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724b3d40b340>]}
+[0m10:45:56.028453 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-10-07 10:48:14.551112 | 4e228739-0fd3-41b6-a0db-652ebd078ffd ==============================
+[0m10:48:14.551112 [info ] [MainThread]: Running with dbt=1.4.0
+[0m10:48:14.553631 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/workspace', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m10:48:14.554106 [debug] [MainThread]: Tracking: tracking
+[0m10:48:14.559072 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6cbc7d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6cbc7220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6cbc7b50>]}
+[0m10:48:14.646134 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m10:48:14.646736 [debug] [MainThread]: Partial parsing: updated file: jaffle_shop_dbtvault://seeds/source_customers.csv
+[0m10:48:14.647077 [debug] [MainThread]: Partial parsing: updated file: jaffle_shop_dbtvault://models/customer_order_rank.sql
+[0m10:48:14.662185 [debug] [MainThread]: 1699: static parser successfully parsed customer_order_rank.sql
+[0m10:48:14.700119 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 5 unused configuration paths:
+- models.jaffle_shop_dbtvault.raw_vault
+- models.jaffle_shop_dbtvault.raw_vault.hubs
+- models.jaffle_shop_dbtvault.raw_vault.sats
+- models.jaffle_shop_dbtvault.stage
+- models.jaffle_shop_dbtvault.raw_vault.links
+[0m10:48:14.705698 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4e228739-0fd3-41b6-a0db-652ebd078ffd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6cb070d0>]}
+[0m10:48:14.718190 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4e228739-0fd3-41b6-a0db-652ebd078ffd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6c8c5640>]}
+[0m10:48:14.718676 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 658 macros, 0 operations, 2 seed files, 7 sources, 0 exposures, 0 metrics
+[0m10:48:14.719053 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4e228739-0fd3-41b6-a0db-652ebd078ffd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6e3d0340>]}
+[0m10:48:14.720476 [info ] [MainThread]: 
+[0m10:48:14.722075 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:48:14.723195 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m10:48:14.735545 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m10:48:14.735852 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:48:14.736121 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:48:14.742408 [debug] [ThreadPool]: SQL status: SELECT 5 in 0 seconds
+[0m10:48:14.743773 [debug] [ThreadPool]: On list_postgres: Close
+[0m10:48:14.745820 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_dbt'
+[0m10:48:14.752208 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:48:14.752520 [debug] [ThreadPool]: On list_postgres_dbt: BEGIN
+[0m10:48:14.752771 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:48:14.758206 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m10:48:14.758553 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:48:14.758796 [debug] [ThreadPool]: On list_postgres_dbt: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres_dbt"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt'
+  
+[0m10:48:14.761008 [debug] [ThreadPool]: SQL status: SELECT 4 in 0 seconds
+[0m10:48:14.762260 [debug] [ThreadPool]: On list_postgres_dbt: ROLLBACK
+[0m10:48:14.762667 [debug] [ThreadPool]: On list_postgres_dbt: Close
+[0m10:48:14.769252 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:14.769538 [debug] [MainThread]: On master: BEGIN
+[0m10:48:14.769768 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:48:14.774919 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:48:14.775188 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:14.775426 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:48:14.779747 [debug] [MainThread]: SQL status: SELECT 2 in 0 seconds
+[0m10:48:14.781249 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4e228739-0fd3-41b6-a0db-652ebd078ffd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6cbdaa00>]}
+[0m10:48:14.781770 [debug] [MainThread]: On master: ROLLBACK
+[0m10:48:14.782307 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:14.782665 [debug] [MainThread]: On master: BEGIN
+[0m10:48:14.783222 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:48:14.783657 [debug] [MainThread]: On master: COMMIT
+[0m10:48:14.784046 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:14.784289 [debug] [MainThread]: On master: COMMIT
+[0m10:48:14.784625 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:48:14.784869 [debug] [MainThread]: On master: Close
+[0m10:48:14.785606 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:48:14.786024 [info ] [MainThread]: 
+[0m10:48:14.790030 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:48:14.790583 [info ] [Thread-1  ]: 1 of 2 START sql view model dbt.customer_order_rank ............................ [RUN]
+[0m10:48:14.791279 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.customer_order_rank'
+[0m10:48:14.791594 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:48:14.795440 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:48:14.796068 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (compile): 2025-10-07 10:48:14.791773 => 2025-10-07 10:48:14.795965
+[0m10:48:14.796494 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:48:14.833817 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:48:14.834438 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:48:14.834684 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: BEGIN
+[0m10:48:14.834909 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:48:14.841706 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:48:14.842115 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:48:14.842555 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+
+  create view "postgres"."dbt"."customer_order_rank__dbt_tmp" as (
+    WITH completed_orders AS (
+  SELECT
+    user_id,
+    COUNT(DISTINCT id) AS completed_count
+  FROM "postgres"."dbt"."source_orders"
+  WHERE status = 'completed'
+  GROUP BY user_id
+)
+SELECT user_id, completed_count
+FROM completed_orders
+ORDER BY completed_count DESC
+  );
+[0m10:48:14.844663 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m10:48:14.851321 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:48:14.851623 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+alter table "postgres"."dbt"."customer_order_rank" rename to "customer_order_rank__dbt_backup"
+[0m10:48:14.852298 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:48:14.855547 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:48:14.855771 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+alter table "postgres"."dbt"."customer_order_rank__dbt_tmp" rename to "customer_order_rank"
+[0m10:48:14.856375 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:48:14.876624 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: COMMIT
+[0m10:48:14.876964 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:48:14.877199 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: COMMIT
+[0m10:48:14.893449 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:48:14.899196 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:48:14.899499 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+drop view if exists "postgres"."dbt"."customer_order_rank__dbt_backup" cascade
+[0m10:48:14.900991 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m10:48:14.902250 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (execute): 2025-10-07 10:48:14.796759 => 2025-10-07 10:48:14.902198
+[0m10:48:14.902564 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: Close
+[0m10:48:14.903437 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4e228739-0fd3-41b6-a0db-652ebd078ffd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6c4229a0>]}
+[0m10:48:14.904026 [info ] [Thread-1  ]: 1 of 2 OK created sql view model dbt.customer_order_rank ....................... [[32mCREATE VIEW[0m in 0.11s]
+[0m10:48:14.907666 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:48:14.908058 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:48:14.908564 [info ] [Thread-1  ]: 2 of 2 START sql view model dbt.order_dynamics ................................. [RUN]
+[0m10:48:14.909790 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.order_dynamics'
+[0m10:48:14.910173 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:48:14.916139 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:48:14.916631 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (compile): 2025-10-07 10:48:14.911003 => 2025-10-07 10:48:14.916561
+[0m10:48:14.916900 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:48:14.921092 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:48:14.921528 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:48:14.921742 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: BEGIN
+[0m10:48:14.921955 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:48:14.927269 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:48:14.927553 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:48:14.927771 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+
+  create view "postgres"."dbt"."order_dynamics__dbt_tmp" as (
+    WITH orders_weekly AS (
+  SELECT
+    DATE_TRUNC('week', order_date) AS calendar_week,
+    COUNT(DISTINCT id) AS orders_count
+  FROM "postgres"."dbt"."source_orders"
+  GROUP BY calendar_week
+)
+SELECT * FROM orders_weekly
+ORDER BY calendar_week
+  );
+[0m10:48:14.929501 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m10:48:14.932848 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:48:14.933107 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+alter table "postgres"."dbt"."order_dynamics" rename to "order_dynamics__dbt_backup"
+[0m10:48:14.933636 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:48:14.936611 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:48:14.936828 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+alter table "postgres"."dbt"."order_dynamics__dbt_tmp" rename to "order_dynamics"
+[0m10:48:14.937307 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:48:14.939063 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:48:14.939314 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:48:14.939528 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:48:14.940692 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:48:14.944349 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:48:14.946012 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+drop view if exists "postgres"."dbt"."order_dynamics__dbt_backup" cascade
+[0m10:48:14.947844 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m10:48:14.949718 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (execute): 2025-10-07 10:48:14.917061 => 2025-10-07 10:48:14.949663
+[0m10:48:14.950065 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: Close
+[0m10:48:14.951023 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4e228739-0fd3-41b6-a0db-652ebd078ffd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6c3f71c0>]}
+[0m10:48:14.951608 [info ] [Thread-1  ]: 2 of 2 OK created sql view model dbt.order_dynamics ............................ [[32mCREATE VIEW[0m in 0.04s]
+[0m10:48:14.952109 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:48:14.954610 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:48:14.955013 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:14.955338 [debug] [MainThread]: On master: BEGIN
+[0m10:48:14.955695 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:48:14.962182 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:48:14.962483 [debug] [MainThread]: On master: COMMIT
+[0m10:48:14.962715 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:14.962930 [debug] [MainThread]: On master: COMMIT
+[0m10:48:14.963224 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:48:14.963502 [debug] [MainThread]: On master: Close
+[0m10:48:14.964161 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:48:14.964472 [debug] [MainThread]: Connection 'list_postgres' was properly closed.
+[0m10:48:14.964721 [debug] [MainThread]: Connection 'model.jaffle_shop_dbtvault.order_dynamics' was properly closed.
+[0m10:48:14.965038 [info ] [MainThread]: 
+[0m10:48:14.965607 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.24 seconds (0.24s).
+[0m10:48:14.966170 [debug] [MainThread]: Command end result
+[0m10:48:14.978920 [info ] [MainThread]: 
+[0m10:48:14.979493 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:48:14.979945 [info ] [MainThread]: 
+[0m10:48:14.980380 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m10:48:14.980912 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6c8c5340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6c3b3bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722d6c3b39a0>]}
+[0m10:48:14.981330 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-10-07 10:48:35.519391 | 99910573-aec0-4493-bdb6-d3feed145d24 ==============================
+[0m10:48:35.519391 [info ] [MainThread]: Running with dbt=1.4.0
+[0m10:48:35.522022 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/workspace', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'show': False, 'which': 'seed', 'rpc_method': 'seed', 'indirect_selection': 'eager'}
+[0m10:48:35.522385 [debug] [MainThread]: Tracking: tracking
+[0m10:48:35.528503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239cc09ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239cc09df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239cc09910>]}
+[0m10:48:35.630159 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:48:35.630716 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:48:35.635031 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 5 unused configuration paths:
+- models.jaffle_shop_dbtvault.raw_vault.hubs
+- models.jaffle_shop_dbtvault.raw_vault.sats
+- models.jaffle_shop_dbtvault.raw_vault
+- models.jaffle_shop_dbtvault.raw_vault.links
+- models.jaffle_shop_dbtvault.stage
+[0m10:48:35.656879 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '99910573-aec0-4493-bdb6-d3feed145d24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239cb770d0>]}
+[0m10:48:35.676774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '99910573-aec0-4493-bdb6-d3feed145d24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239c9b5340>]}
+[0m10:48:35.677435 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 658 macros, 0 operations, 2 seed files, 7 sources, 0 exposures, 0 metrics
+[0m10:48:35.677932 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '99910573-aec0-4493-bdb6-d3feed145d24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239c9b5220>]}
+[0m10:48:35.680121 [info ] [MainThread]: 
+[0m10:48:35.682701 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:48:35.684346 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m10:48:35.698766 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m10:48:35.699174 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:48:35.699484 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:48:35.706454 [debug] [ThreadPool]: SQL status: SELECT 5 in 0 seconds
+[0m10:48:35.707961 [debug] [ThreadPool]: On list_postgres: Close
+[0m10:48:35.710136 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_dbt'
+[0m10:48:35.720433 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:48:35.720813 [debug] [ThreadPool]: On list_postgres_dbt: BEGIN
+[0m10:48:35.721094 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:48:35.727401 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m10:48:35.727806 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:48:35.728070 [debug] [ThreadPool]: On list_postgres_dbt: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres_dbt"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt'
+  
+[0m10:48:35.730637 [debug] [ThreadPool]: SQL status: SELECT 4 in 0 seconds
+[0m10:48:35.731989 [debug] [ThreadPool]: On list_postgres_dbt: ROLLBACK
+[0m10:48:35.732398 [debug] [ThreadPool]: On list_postgres_dbt: Close
+[0m10:48:35.739329 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:35.739653 [debug] [MainThread]: On master: BEGIN
+[0m10:48:35.739911 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:48:35.745253 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:48:35.745575 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:35.745802 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:48:35.749218 [debug] [MainThread]: SQL status: SELECT 2 in 0 seconds
+[0m10:48:35.751619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '99910573-aec0-4493-bdb6-d3feed145d24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239c7d9970>]}
+[0m10:48:35.752137 [debug] [MainThread]: On master: ROLLBACK
+[0m10:48:35.752532 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:35.752791 [debug] [MainThread]: On master: BEGIN
+[0m10:48:35.753339 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:48:35.753716 [debug] [MainThread]: On master: COMMIT
+[0m10:48:35.754040 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:35.754340 [debug] [MainThread]: On master: COMMIT
+[0m10:48:35.754850 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:48:35.755272 [debug] [MainThread]: On master: Close
+[0m10:48:35.756217 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:48:35.756682 [info ] [MainThread]: 
+[0m10:48:35.760126 [debug] [Thread-1  ]: Began running node seed.jaffle_shop_dbtvault.source_customers
+[0m10:48:35.760537 [info ] [Thread-1  ]: 1 of 2 START seed file dbt.source_customers .................................... [RUN]
+[0m10:48:35.761215 [debug] [Thread-1  ]: Acquiring new postgres connection 'seed.jaffle_shop_dbtvault.source_customers'
+[0m10:48:35.761513 [debug] [Thread-1  ]: Began compiling node seed.jaffle_shop_dbtvault.source_customers
+[0m10:48:35.761778 [debug] [Thread-1  ]: Timing info for seed.jaffle_shop_dbtvault.source_customers (compile): 2025-10-07 10:48:35.761698 => 2025-10-07 10:48:35.761703
+[0m10:48:35.762108 [debug] [Thread-1  ]: Began executing node seed.jaffle_shop_dbtvault.source_customers
+[0m10:48:35.796029 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_customers"
+[0m10:48:35.796393 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: BEGIN
+[0m10:48:35.796677 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:48:35.803769 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:48:35.804257 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_customers"
+[0m10:48:35.804736 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "seed.jaffle_shop_dbtvault.source_customers"} */
+truncate table "postgres"."dbt"."source_customers"
+[0m10:48:35.806561 [debug] [Thread-1  ]: SQL status: TRUNCATE TABLE in 0 seconds
+[0m10:48:35.946533 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_customers"
+[0m10:48:35.946889 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: 
+          insert into "postgres"."dbt"."source_customers" ("id", "first_name", "last_name", "email") values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(...
+[0m10:48:35.948376 [debug] [Thread-1  ]: SQL status: INSERT 0 103 in 0 seconds
+[0m10:48:35.954557 [debug] [Thread-1  ]: Writing runtime SQL for node "seed.jaffle_shop_dbtvault.source_customers"
+[0m10:48:35.972017 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: COMMIT
+[0m10:48:35.972461 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_customers"
+[0m10:48:35.972699 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: COMMIT
+[0m10:48:35.974295 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:48:35.975007 [debug] [Thread-1  ]: Timing info for seed.jaffle_shop_dbtvault.source_customers (execute): 2025-10-07 10:48:35.762349 => 2025-10-07 10:48:35.974953
+[0m10:48:35.975251 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_customers: Close
+[0m10:48:35.976086 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '99910573-aec0-4493-bdb6-d3feed145d24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239c7d6820>]}
+[0m10:48:35.976617 [info ] [Thread-1  ]: 1 of 2 OK loaded seed file dbt.source_customers ................................ [[32mINSERT 103[0m in 0.22s]
+[0m10:48:35.978580 [debug] [Thread-1  ]: Finished running node seed.jaffle_shop_dbtvault.source_customers
+[0m10:48:35.979002 [debug] [Thread-1  ]: Began running node seed.jaffle_shop_dbtvault.source_orders
+[0m10:48:35.979491 [info ] [Thread-1  ]: 2 of 2 START seed file dbt.source_orders ....................................... [RUN]
+[0m10:48:35.980165 [debug] [Thread-1  ]: Acquiring new postgres connection 'seed.jaffle_shop_dbtvault.source_orders'
+[0m10:48:35.980444 [debug] [Thread-1  ]: Began compiling node seed.jaffle_shop_dbtvault.source_orders
+[0m10:48:35.980678 [debug] [Thread-1  ]: Timing info for seed.jaffle_shop_dbtvault.source_orders (compile): 2025-10-07 10:48:35.980609 => 2025-10-07 10:48:35.980614
+[0m10:48:35.980903 [debug] [Thread-1  ]: Began executing node seed.jaffle_shop_dbtvault.source_orders
+[0m10:48:35.993778 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_orders"
+[0m10:48:35.994220 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: BEGIN
+[0m10:48:35.994583 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:48:36.003991 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:48:36.004403 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_orders"
+[0m10:48:36.004725 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "seed.jaffle_shop_dbtvault.source_orders"} */
+truncate table "postgres"."dbt"."source_orders"
+[0m10:48:36.006642 [debug] [Thread-1  ]: SQL status: TRUNCATE TABLE in 0 seconds
+[0m10:48:36.179228 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_orders"
+[0m10:48:36.179633 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: 
+          insert into "postgres"."dbt"."source_orders" ("id", "user_id", "order_date", "status") values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%...
+[0m10:48:36.181320 [debug] [Thread-1  ]: SQL status: INSERT 0 101 in 0 seconds
+[0m10:48:36.182489 [debug] [Thread-1  ]: Writing runtime SQL for node "seed.jaffle_shop_dbtvault.source_orders"
+[0m10:48:36.185709 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: COMMIT
+[0m10:48:36.186006 [debug] [Thread-1  ]: Using postgres connection "seed.jaffle_shop_dbtvault.source_orders"
+[0m10:48:36.186208 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: COMMIT
+[0m10:48:36.187581 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:48:36.188177 [debug] [Thread-1  ]: Timing info for seed.jaffle_shop_dbtvault.source_orders (execute): 2025-10-07 10:48:35.981048 => 2025-10-07 10:48:36.188124
+[0m10:48:36.188434 [debug] [Thread-1  ]: On seed.jaffle_shop_dbtvault.source_orders: Close
+[0m10:48:36.189218 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '99910573-aec0-4493-bdb6-d3feed145d24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239c7e6a60>]}
+[0m10:48:36.189739 [info ] [Thread-1  ]: 2 of 2 OK loaded seed file dbt.source_orders ................................... [[32mINSERT 101[0m in 0.21s]
+[0m10:48:36.190222 [debug] [Thread-1  ]: Finished running node seed.jaffle_shop_dbtvault.source_orders
+[0m10:48:36.191865 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:48:36.192152 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:36.192395 [debug] [MainThread]: On master: BEGIN
+[0m10:48:36.192619 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:48:36.204754 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:48:36.205168 [debug] [MainThread]: On master: COMMIT
+[0m10:48:36.205513 [debug] [MainThread]: Using postgres connection "master"
+[0m10:48:36.205830 [debug] [MainThread]: On master: COMMIT
+[0m10:48:36.206253 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:48:36.206624 [debug] [MainThread]: On master: Close
+[0m10:48:36.208510 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:48:36.208796 [debug] [MainThread]: Connection 'list_postgres' was properly closed.
+[0m10:48:36.209012 [debug] [MainThread]: Connection 'seed.jaffle_shop_dbtvault.source_orders' was properly closed.
+[0m10:48:36.209292 [info ] [MainThread]: 
+[0m10:48:36.210072 [info ] [MainThread]: Finished running 2 seeds in 0 hours 0 minutes and 0.53 seconds (0.53s).
+[0m10:48:36.210560 [debug] [MainThread]: Command end result
+[0m10:48:36.222317 [info ] [MainThread]: 
+[0m10:48:36.222773 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:48:36.223109 [info ] [MainThread]: 
+[0m10:48:36.223445 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m10:48:36.223854 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239c9b53a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239c800eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74239cb19c70>]}
+[0m10:48:36.224149 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-10-07 10:54:42.134890 | f7d9b903-a0e8-4f89-85cb-256a2459e341 ==============================
+[0m10:54:42.134890 [info ] [MainThread]: Running with dbt=1.4.0
+[0m10:54:42.139756 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/workspace', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m10:54:42.141054 [debug] [MainThread]: Tracking: tracking
+[0m10:54:42.154834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f5b1d160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f5b1da30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f5b1db50>]}
+[0m10:54:42.278732 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m10:54:42.279367 [debug] [MainThread]: Partial parsing: updated file: jaffle_shop_dbtvault://seeds/source_orders.csv
+[0m10:54:42.315220 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 5 unused configuration paths:
+- models.jaffle_shop_dbtvault.raw_vault.sats
+- models.jaffle_shop_dbtvault.raw_vault
+- models.jaffle_shop_dbtvault.raw_vault.hubs
+- models.jaffle_shop_dbtvault.stage
+- models.jaffle_shop_dbtvault.raw_vault.links
+[0m10:54:42.321068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f7d9b903-a0e8-4f89-85cb-256a2459e341', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f5a4d0d0>]}
+[0m10:54:42.334131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f7d9b903-a0e8-4f89-85cb-256a2459e341', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f5a2bf70>]}
+[0m10:54:42.334598 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 658 macros, 0 operations, 2 seed files, 7 sources, 0 exposures, 0 metrics
+[0m10:54:42.334978 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f7d9b903-a0e8-4f89-85cb-256a2459e341', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f580c610>]}
+[0m10:54:42.336345 [info ] [MainThread]: 
+[0m10:54:42.338050 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:54:42.339168 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m10:54:42.355639 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m10:54:42.356091 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:54:42.356395 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:54:42.363978 [debug] [ThreadPool]: SQL status: SELECT 5 in 0 seconds
+[0m10:54:42.365497 [debug] [ThreadPool]: On list_postgres: Close
+[0m10:54:42.367612 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_dbt'
+[0m10:54:42.374268 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:54:42.374629 [debug] [ThreadPool]: On list_postgres_dbt: BEGIN
+[0m10:54:42.374880 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:54:42.380444 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m10:54:42.380831 [debug] [ThreadPool]: Using postgres connection "list_postgres_dbt"
+[0m10:54:42.381159 [debug] [ThreadPool]: On list_postgres_dbt: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_postgres_dbt"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt'
+  
+[0m10:54:42.384619 [debug] [ThreadPool]: SQL status: SELECT 4 in 0 seconds
+[0m10:54:42.386398 [debug] [ThreadPool]: On list_postgres_dbt: ROLLBACK
+[0m10:54:42.386863 [debug] [ThreadPool]: On list_postgres_dbt: Close
+[0m10:54:42.401617 [debug] [MainThread]: Using postgres connection "master"
+[0m10:54:42.402107 [debug] [MainThread]: On master: BEGIN
+[0m10:54:42.402486 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:54:42.412552 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:54:42.413081 [debug] [MainThread]: Using postgres connection "master"
+[0m10:54:42.413464 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:54:42.419632 [debug] [MainThread]: SQL status: SELECT 2 in 0 seconds
+[0m10:54:42.421852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f7d9b903-a0e8-4f89-85cb-256a2459e341', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f731a880>]}
+[0m10:54:42.422340 [debug] [MainThread]: On master: ROLLBACK
+[0m10:54:42.422753 [debug] [MainThread]: Using postgres connection "master"
+[0m10:54:42.422999 [debug] [MainThread]: On master: BEGIN
+[0m10:54:42.423439 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:54:42.423723 [debug] [MainThread]: On master: COMMIT
+[0m10:54:42.423944 [debug] [MainThread]: Using postgres connection "master"
+[0m10:54:42.424148 [debug] [MainThread]: On master: COMMIT
+[0m10:54:42.424454 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:54:42.424704 [debug] [MainThread]: On master: Close
+[0m10:54:42.425509 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:54:42.425924 [info ] [MainThread]: 
+[0m10:54:42.430451 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:54:42.430841 [info ] [Thread-1  ]: 1 of 2 START sql view model dbt.customer_order_rank ............................ [RUN]
+[0m10:54:42.431514 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.customer_order_rank'
+[0m10:54:42.431785 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:54:42.436321 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:54:42.436870 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (compile): 2025-10-07 10:54:42.431957 => 2025-10-07 10:54:42.436780
+[0m10:54:42.437151 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:54:42.473743 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:54:42.474363 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:54:42.474612 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: BEGIN
+[0m10:54:42.474834 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:54:42.480849 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:54:42.481124 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:54:42.481335 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+
+  create view "postgres"."dbt"."customer_order_rank__dbt_tmp" as (
+    WITH completed_orders AS (
+  SELECT
+    user_id,
+    COUNT(DISTINCT id) AS completed_count
+  FROM "postgres"."dbt"."source_orders"
+  WHERE status = 'completed'
+  GROUP BY user_id
+)
+SELECT user_id, completed_count
+FROM completed_orders
+ORDER BY completed_count DESC
+  );
+[0m10:54:42.483087 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m10:54:42.489571 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:54:42.489822 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+alter table "postgres"."dbt"."customer_order_rank" rename to "customer_order_rank__dbt_backup"
+[0m10:54:42.490440 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:54:42.493639 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:54:42.493864 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+alter table "postgres"."dbt"."customer_order_rank__dbt_tmp" rename to "customer_order_rank"
+[0m10:54:42.494399 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:54:42.516933 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: COMMIT
+[0m10:54:42.517314 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:54:42.517563 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: COMMIT
+[0m10:54:42.532205 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:54:42.537925 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.customer_order_rank"
+[0m10:54:42.538216 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.customer_order_rank"} */
+drop view if exists "postgres"."dbt"."customer_order_rank__dbt_backup" cascade
+[0m10:54:42.540301 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m10:54:42.542109 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.customer_order_rank (execute): 2025-10-07 10:54:42.437315 => 2025-10-07 10:54:42.542031
+[0m10:54:42.542512 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.customer_order_rank: Close
+[0m10:54:42.543501 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f7d9b903-a0e8-4f89-85cb-256a2459e341', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f5628910>]}
+[0m10:54:42.544124 [info ] [Thread-1  ]: 1 of 2 OK created sql view model dbt.customer_order_rank ....................... [[32mCREATE VIEW[0m in 0.11s]
+[0m10:54:42.546099 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.customer_order_rank
+[0m10:54:42.546913 [debug] [Thread-1  ]: Began running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:54:42.547426 [info ] [Thread-1  ]: 2 of 2 START sql view model dbt.order_dynamics ................................. [RUN]
+[0m10:54:42.548428 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.jaffle_shop_dbtvault.order_dynamics'
+[0m10:54:42.548818 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:54:42.554262 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:54:42.554779 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (compile): 2025-10-07 10:54:42.549100 => 2025-10-07 10:54:42.554690
+[0m10:54:42.555054 [debug] [Thread-1  ]: Began executing node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:54:42.559849 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:54:42.560289 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:54:42.560527 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: BEGIN
+[0m10:54:42.560730 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:54:42.566333 [debug] [Thread-1  ]: SQL status: BEGIN in 0 seconds
+[0m10:54:42.566619 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:54:42.566853 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+
+  create view "postgres"."dbt"."order_dynamics__dbt_tmp" as (
+    WITH orders_weekly AS (
+  SELECT
+    DATE_TRUNC('week', order_date) AS calendar_week,
+    COUNT(DISTINCT id) AS orders_count
+  FROM "postgres"."dbt"."source_orders"
+  GROUP BY calendar_week
+)
+SELECT * FROM orders_weekly
+ORDER BY calendar_week
+  );
+[0m10:54:42.568954 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m10:54:42.572806 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:54:42.573128 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+alter table "postgres"."dbt"."order_dynamics" rename to "order_dynamics__dbt_backup"
+[0m10:54:42.573803 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:54:42.582448 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:54:42.582844 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+alter table "postgres"."dbt"."order_dynamics__dbt_tmp" rename to "order_dynamics"
+[0m10:54:42.584058 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m10:54:42.587251 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:54:42.587607 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:54:42.587908 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: COMMIT
+[0m10:54:42.589817 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m10:54:42.594549 [debug] [Thread-1  ]: Using postgres connection "model.jaffle_shop_dbtvault.order_dynamics"
+[0m10:54:42.594862 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop_dbtvault.order_dynamics"} */
+drop view if exists "postgres"."dbt"."order_dynamics__dbt_backup" cascade
+[0m10:54:42.596509 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m10:54:42.598429 [debug] [Thread-1  ]: Timing info for model.jaffle_shop_dbtvault.order_dynamics (execute): 2025-10-07 10:54:42.555215 => 2025-10-07 10:54:42.598313
+[0m10:54:42.598805 [debug] [Thread-1  ]: On model.jaffle_shop_dbtvault.order_dynamics: Close
+[0m10:54:42.602100 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f7d9b903-a0e8-4f89-85cb-256a2459e341', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f5628910>]}
+[0m10:54:42.603330 [info ] [Thread-1  ]: 2 of 2 OK created sql view model dbt.order_dynamics ............................ [[32mCREATE VIEW[0m in 0.05s]
+[0m10:54:42.603958 [debug] [Thread-1  ]: Finished running node model.jaffle_shop_dbtvault.order_dynamics
+[0m10:54:42.606223 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:54:42.606643 [debug] [MainThread]: Using postgres connection "master"
+[0m10:54:42.606982 [debug] [MainThread]: On master: BEGIN
+[0m10:54:42.607288 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:54:42.620885 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m10:54:42.622067 [debug] [MainThread]: On master: COMMIT
+[0m10:54:42.622942 [debug] [MainThread]: Using postgres connection "master"
+[0m10:54:42.623963 [debug] [MainThread]: On master: COMMIT
+[0m10:54:42.624520 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m10:54:42.624954 [debug] [MainThread]: On master: Close
+[0m10:54:42.628009 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:54:42.628395 [debug] [MainThread]: Connection 'list_postgres' was properly closed.
+[0m10:54:42.628744 [debug] [MainThread]: Connection 'model.jaffle_shop_dbtvault.order_dynamics' was properly closed.
+[0m10:54:42.629198 [info ] [MainThread]: 
+[0m10:54:42.630341 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.29 seconds (0.29s).
+[0m10:54:42.631095 [debug] [MainThread]: Command end result
+[0m10:54:42.653760 [info ] [MainThread]: 
+[0m10:54:42.654449 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:54:42.654969 [info ] [MainThread]: 
+[0m10:54:42.655306 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m10:54:42.655759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f5628d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f5a4d820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ae8f57330d0>]}
+[0m10:54:42.656061 [debug] [MainThread]: Flushing usage events
